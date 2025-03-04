@@ -9,10 +9,13 @@ namespace Team_3_mueseum.Data{
 
         }
         public DbSet<user> UserTable { get; set; }
+        public DbSet<Membership> MembershipTable { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<user>()
                 .ToTable("Users"); 
+            modelBuilder.Entity<Membership>()
+                .ToTable("Membership");
         }
     }
     

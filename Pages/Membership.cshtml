@@ -1,0 +1,24 @@
+@page
+@model Team_3_mueseum.Pages.MembershipModel
+@{
+    ViewData["Title"] = "Membership List";
+}
+
+<h2>Membership List</h2>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Type</th>
+        <th>Fee</th>
+        <th>Expiry Date</th>
+    </tr>
+    @foreach (var m in Model.Memberships)
+    {
+    <tr>
+        <td>@m.Id</td>
+        <td>@m.Type</td>
+        <td>@m.Fee</td>
+        <td>@m.ExpiryDate.ToShortDateString()</td>
+    </tr>
+    }
+</table>

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Team_3_mueseum.Data;
 using Team_3_mueseum.Model;
 using Microsoft.EntityFrameworkCore;
@@ -20,10 +21,10 @@ namespace Team_3_mueseum
             return _context.UserTable.ToList(); // Fetches all products
         }
 
-        public void AddUser(user U)
+        public async Task AddUser(user U)
         {
             _context.UserTable.Add(U);
-            await _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
     }
 }
