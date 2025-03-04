@@ -14,15 +14,50 @@
 <table class="User_table">
     <tr>
         <th>UserID</th>
+        <th>Username</th>
         <th>Email</th>
         <th>Password</th>
     </tr>
     @foreach (var u in users)
     {
     <tr>
-        <td>@u.UserID</td>
+        <td>@u.user_id</td>
+        <td>@u.username</td>
         <td>@u.Email</td>
         <td>@u.Password</td>
     </tr>
     }
 </table>
+
+<h2> Add new User</h2>
+<div>
+    <form method="post">
+        <label for="username"> Username: </label>
+        <input type="Text" name="username">
+        <label for="email"> UserEmail: </label>
+        <input type="email" name="email">
+        <label for="password"> Password: </label>
+        <input type="Text" name="password">
+        <input type="submit" asp-page-handler="AddUser">
+    </form>
+</div>
+<h2> Delete User</h2>
+<div>
+    <form method="post">
+        <label for="username"> Username: </label>
+        <input type="Text" name="username">
+        <input type="submit" asp-page-handler="DeleteUser">
+    </form>
+</div>
+<h2> Add new User</h2>
+<div>
+    <form method="post">
+        <label for="username"> Username: </label>
+        <input type="Text" name="username">
+        <label for="email"> UserEmail: </label>
+        <input type="email" name="email">
+        <label for="password"> Password: </label>
+        <input type="Text" name="password">
+        <input type="submit" asp-page-handler="AddUser">
+    </form>
+</div>

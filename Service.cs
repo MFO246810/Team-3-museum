@@ -20,10 +20,23 @@ namespace Team_3_mueseum
             return _context.UserTable.ToList(); // Fetches all products
         }
 
-        public void AddUser(user U)
+        public async Task AddUser(user U)
         {
             _context.UserTable.Add(U);
-            await _context.SaveChanges();
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task<bool> DeleteUserAsync(string username){
+            var user = await _context.UserTable.FindAsync(username); // Find user by ID
+                if (user == null)
+                    {
+                        return false; // User not found
+                    }
+
+             _context.UserTable.Remove(user); // Remove user
+            await _context.SaveChangesAsync(); // Commit changes to the database
+
+            return true;
         }
     }
 }

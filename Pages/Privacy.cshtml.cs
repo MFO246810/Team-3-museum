@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace temp_folder.Pages
+namespace Team_3_mueseum.Pages
 {
     public class PrivacyModel : PageModel
     {
